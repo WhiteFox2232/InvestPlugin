@@ -1,0 +1,15 @@
+name: InvestPlugin
+version: '${project.version}'
+main: fr.whitefox.investplugin.Main
+api-version: 1.19
+authors: [ WhiteFox2232 ]
+website: https://github.com/whitefox2232
+
+commands:
+  invest:
+    description: Invest
+    permission: Invest.invest
+  config:
+    description: Config plugin
+    permission: Invest.config
+
