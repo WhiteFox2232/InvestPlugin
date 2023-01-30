@@ -10,5 +10,8 @@ public class Message {
     // Invest Command
     public static final String CHAT_NOT_IN_INVEST_ZONE = "§cVous devez être dans une zone d'investissement !";
     public static final String CHAT_INVEST_STARTED = "§aInvestissement lancé !";
-    public static final String CHAT_BAD_ARGS = "§cUtilisez la commande correctement !";
+    public static final String CHAT_BAD_ARGS_INVEST = "§cUtilisez la commande correctement !";
+
+    // Config Command
+    public static final String CHAT_BAD_ARGS_CONFIG = "§cUsage : /config area";
 }

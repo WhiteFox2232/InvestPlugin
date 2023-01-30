@@ -56,7 +56,7 @@ public class InvestCommand implements CommandExecutor, TabCompleter {
         }
 
 
-        player.sendMessage(Message.CHAT_BAD_ARGS);
+        player.sendMessage(Message.CHAT_BAD_ARGS_INVEST);
         return false;
     }
 }

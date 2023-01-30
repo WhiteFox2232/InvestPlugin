@@ -1,6 +1,7 @@
 package fr.whitefox.investplugin.commands;
 
 import fr.whitefox.investplugin.Main;
+import fr.whitefox.investplugin.utils.Message;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -34,7 +35,7 @@ public class ConfigCommand implements CommandExecutor, TabCompleter {
         Player player = (Player) sender;
 
         if(args.length == 0) {
-            player.sendMessage(noArgs());
+            player.sendMessage(Message.CHAT_BAD_ARGS_CONFIG);
             return false;
         }
 
@@ -46,11 +47,7 @@ public class ConfigCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        player.sendMessage(noArgs());
+        player.sendMessage(Message.CHAT_BAD_ARGS_CONFIG );
         return false;
-    }
-
-    public String noArgs() {
-        return "§cUsage : /config area";
     }
 }
