@@ -2,8 +2,11 @@ package fr.whitefox.investplugin.utils;
 
 public class Message {
 
+    // Global
+    public static final String ERROR_NOT_A_PLAYER = "§cVeuillez effectuer cette commande en tant que joueur !";
+
     // Chunk Event
-    public static final String TITLE_JOIN_ZONE = "§adVous entrez dans une zone d'invest";
+    public static final String TITLE_JOIN_ZONE = "§aVous entrez dans une zone d'invest";
     public static final String CHAT_LEAVE_INTERRUPT_INVEST = "§cVous avez quitté la zone ! Votre investissement a été annulé.";
     public static final String TITLE_LEAVE_ZONE = "§cVous sortez d'une zone d'invest";
 
@@ -14,4 +17,5 @@ public class Message {
 
     // Config Command
     public static final String CHAT_BAD_ARGS_CONFIG = "§cUsage : /config area";
+    public static final String CHAT_COORDINATES = "§dCoordinates : ";
 }

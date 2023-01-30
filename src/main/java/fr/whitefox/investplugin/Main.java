@@ -3,16 +3,11 @@ package fr.whitefox.investplugin;
 import fr.whitefox.investplugin.commands.ConfigCommand;
 import fr.whitefox.investplugin.commands.InvestCommand;
 import fr.whitefox.investplugin.events.ChunkEvent;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitTask;
-
-import java.util.HashMap;
 
 public final class Main extends JavaPlugin {
 
-    public static HashMap<Player, BukkitTask> player_tasks = new HashMap<>();
     private static Main instance;
 
     public static Main getInstance() {
