@@ -19,8 +19,6 @@ public class InvestCommand implements CommandExecutor, TabCompleter {
 
     private static final String[] COMMANDS = {"start"};
     public static HashMap<Player, BukkitTask> player_tasks = new HashMap<>();
-    private final int areaX = Main.getInstance().getConfig().getInt("area.x");
-    private final int areaZ = Main.getInstance().getConfig().getInt("area.z");
     private FileConfiguration config = Main.getInstance().getConfig();
     private Main main = Main.getInstance();
 
@@ -42,7 +40,7 @@ public class InvestCommand implements CommandExecutor, TabCompleter {
         Player player = (Player) sender;
 
         if (args.length == 0 || args[0].equalsIgnoreCase("start")) {
-            if (player.getLocation().getChunk().getX() != areaX || player.getLocation().getChunk().getZ() != areaZ) {
+            if (player.getLocation().getChunk().getX() != config.getInt("area.x") || player.getLocation().getChunk().getZ() != config.getInt("area.z")) {
                 player.sendMessage(Message.CHAT_NOT_IN_INVEST_ZONE);
                 return false;
             }
