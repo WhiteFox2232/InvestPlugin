@@ -5,35 +5,15 @@ import fr.whitefox.investplugin.utils.Message;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+public class ConfigCommand implements CommandExecutor {
 
-public class ConfigCommand implements CommandExecutor, TabCompleter {
-
-    private static final String[] ARGS_BASE = {"area"};
-    private static final String[] ARGS_AREA = {"set", "get"};
     private static final String AREA = "area";
     private static final String GET = "get";
     private static final String SET = "set";
     FileConfiguration config = Main.getInstance().getConfig();
-
-    @Override
-    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length == 1) {
-            return new ArrayList<>(Arrays.asList(ARGS_BASE));
-        } else if (args.length == 2) {
-            if(args[0].equalsIgnoreCase(AREA)) {
-                return new ArrayList<>(Arrays.asList(ARGS_AREA));
-            }
-        }
-
-        return null;
-    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {

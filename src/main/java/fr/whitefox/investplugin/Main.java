@@ -2,6 +2,8 @@ package fr.whitefox.investplugin;
 
 import fr.whitefox.investplugin.commands.ConfigCommand;
 import fr.whitefox.investplugin.commands.InvestCommand;
+import fr.whitefox.investplugin.completions.ConfigCompletions;
+import fr.whitefox.investplugin.completions.InvestCompletions;
 import fr.whitefox.investplugin.events.ChunkEvent;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -9,6 +11,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Main extends JavaPlugin {
 
     private static Main instance;
+    private static final String INVEST = "invest";
+    private static final String CONFIG = "config";
 
     public static Main getInstance() {
         return instance;
@@ -22,10 +26,10 @@ public final class Main extends JavaPlugin {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new ChunkEvent(), this);
 
-        getCommand("invest").setExecutor(new InvestCommand());
-        getCommand("invest").setTabCompleter(new InvestCommand());
-        getCommand("config").setExecutor(new ConfigCommand());
-        getCommand("config").setTabCompleter(new ConfigCommand());
+        getCommand(INVEST).setExecutor(new InvestCommand());
+        getCommand(INVEST).setTabCompleter(new InvestCompletions());
+        getCommand(CONFIG).setExecutor(new ConfigCommand());
+        getCommand(CONFIG).setTabCompleter(new ConfigCompletions());
     }
 
     @Override

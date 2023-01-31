@@ -6,32 +6,18 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
-public class InvestCommand implements CommandExecutor, TabCompleter {
+public class InvestCommand implements CommandExecutor {
 
-    private static final String[] ARGS_BASE = {"area"};
     public static HashMap<Player, BukkitTask> player_tasks = new HashMap<>();
     private FileConfiguration config = Main.getInstance().getConfig();
     private Main main = Main.getInstance();
-
-    @Override
-    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length == 1) {
-            return new ArrayList<>(Arrays.asList(ARGS_BASE));
-        }
-
-        return null;
-    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
