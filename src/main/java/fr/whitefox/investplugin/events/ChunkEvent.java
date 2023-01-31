@@ -17,11 +17,11 @@ public class ChunkEvent implements Listener {
 
     @EventHandler
     public void chunkInteraction(PlayerMoveEvent event) {
-        Player player = event.getPlayer();
-
         if (event.getFrom().getChunk() == event.getTo().getChunk()) {
             return;
         }
+
+        Player player = event.getPlayer();
 
         if (event.getTo().getChunk().getX() == config.getInt("area.x") && event.getTo().getChunk().getZ() == config.getInt("area.z")) {
             joinZone(player);
