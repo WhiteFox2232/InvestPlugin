@@ -11,23 +11,26 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
-import org.bukkit.util.StringUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class InvestCommand implements CommandExecutor, TabCompleter {
 
-    private static final String[] COMMANDS = {"start"};
+    private static final String[] ARGS_BASE = {"area"};
     public static HashMap<Player, BukkitTask> player_tasks = new HashMap<>();
     private FileConfiguration config = Main.getInstance().getConfig();
     private Main main = Main.getInstance();
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
-        final List<String> completions = new ArrayList<>();
-        StringUtil.copyPartialMatches(args[0], Arrays.asList(COMMANDS), completions);
-        Collections.sort(completions);
-        return completions;
+        if (args.length == 1) {
+            return new ArrayList<>(Arrays.asList(ARGS_BASE));
+        }
+
+        return null;
     }
 
     @Override

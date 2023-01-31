@@ -27,7 +27,9 @@ public class ConfigCommand implements CommandExecutor, TabCompleter {
         if (args.length == 1) {
             return new ArrayList<>(Arrays.asList(ARGS_BASE));
         } else if (args.length == 2) {
-            return new ArrayList<>(Arrays.asList(ARGS_AREA));
+            if(args[0].equalsIgnoreCase(AREA)) {
+                return new ArrayList<>(Arrays.asList(ARGS_AREA));
+            }
         }
 
         return null;
